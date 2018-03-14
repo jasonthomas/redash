@@ -3,20 +3,28 @@
     <h4 class="modal-title">Refresh Schedule</h4>
 </div>
 <div class="modal-body">
-    <div class="radio">
+    <p>
         <label>
-            <input type="radio" value="periodic" ng-model="$ctrl.refreshType">
-            <query-refresh-select refresh-type="$ctrl.refreshType" query="$ctrl.query" save-query="$ctrl.saveQuery"></query-refresh-select>
+            Repeat every
+            <query-interval-picker query="$ctrl.query" save-query="$ctrl.saveQuery"></query-interval-picker>
         </label>
-    </div>
-    <div class="radio">
+    </p>
+    <p>
+        <label ng-show="showTimePicker">
+            At the following time:
+            <query-time-picker query="$ctrl.query" save-query="$ctrl.saveQuery"></query-time-picker>
+        </label>
+    </p>
+    <p>
+        <label ng-show="showDays">
+            On the following day:
+            <query-day-picker query="$ctrl.query" save-query="$ctrl.saveQuery"></query-day-picker>
+        </label>
+    </p>
+    <p>
         <label>
-            <input type="radio" value="daily" ng-model="$ctrl.refreshType">
-            <query-time-picker refresh-type="$ctrl.refreshType" query="$ctrl.query" save-query="$ctrl.saveQuery"></query-time-picker>
+          Stop scheduling at date/time (format yyyy-MM-ddTHH:mm:ss, like 2016-12-28T14:57:00):
+          <schedule-until query="$ctrl.query" save-query="$ctrl.saveQuery"></schedule-until>
         </label>
-    </div>
-    <label>
-      Stop scheduling at date/time (format yyyy-MM-ddTHH:mm:ss, like 2016-12-28T14:57:00):
-      <schedule-until query="$ctrl.query" save-query="$ctrl.saveQuery"></schedule-until>
-    </label>
+    </p>
 </div>

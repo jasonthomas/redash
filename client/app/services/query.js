@@ -239,7 +239,7 @@ function QueryResource($resource, $http, $q, $location, currentUser, QueryResult
     return this.id === undefined;
   };
 
-  Query.prototype.hasDailySchedule = function hasDailySchedule() {
+  Query.prototype.hasFixedSchedule = function hasFixedSchedule() {
     return this.schedule && this.schedule.match(/\d\d:\d\d/) !== null;
   };
 
