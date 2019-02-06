@@ -120,7 +120,7 @@ workflows:
 
       - frontend-unit-tests
       - frontend-e2e-tests
-      - backend-unit-tests
+      - backend-unit-tests:
           filters:
             tags:
               only: /.*/
