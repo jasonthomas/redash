@@ -123,9 +123,10 @@ workflows:
       - backend-unit-tests
           filters:
             tags:
-              only: /^.*/
+              only: /.*/
             branches:
-              only: /^.*/
+              ignore:
+                - gh-pages
       - deploy-master:
           requires:
             - backend-unit-tests
