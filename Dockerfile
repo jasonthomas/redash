@@ -1,5 +1,6 @@
 FROM redash/base:latest
 
+
 # Controls whether to install extra dependencies needed for all data sources.
 ARG skip_ds_deps
 
@@ -24,3 +25,4 @@ USER redash
 
 ENTRYPOINT ["/app/bin/docker-entrypoint"]
 CMD ["server"]
+
